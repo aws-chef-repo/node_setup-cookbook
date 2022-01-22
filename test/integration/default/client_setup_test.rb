@@ -9,7 +9,7 @@ describe file('/etc/chef/client.rb') do
   its('content') { should match /policy_group "staging"/ }
   its('content') { should match /policy_name "web-server"/ }
   its('content') { should match /log_location STDOUT/ }
-  its('content') { should match %r{validation_key "/etc/chef/first-org-validator.pem"} }
+  its('content') { should match %r{validation_key "/etc/chef/validation.pem"} }
   its('content') { should match %r{trusted_certs_dir "/etc/chef/trusted_certs"} }
 end
 

@@ -33,8 +33,8 @@ default['node_setup']['chef_server']['ipaddress'] = '198.18.246.201'
 default['node_setup']['chef_server']['fqdn'] = 'automate.cl'
 
 # Specify Org name and its key file name
-default['node_setup']['org_name'] = 'first-org'
-default['node_setup']['org_validation_key_file'] = 'first-org-validator.pem'
+default['node_setup']['org_name'] = 'aws-org'
+default['node_setup']['org_validation_key_file'] = 'validation.pem'
 
 # Specify Policy name & Policy group OR Environment
 default['node_setup']['policy_name'] = 'web-server'
