@@ -42,7 +42,7 @@ jobs:
       - name: Docker Running?
         continue-on-error: true
         id: check-docker-status
-        run: service docker status
+        run: sudo service docker status
 
       - name: Install Docker
         if: steps.check-docker-status.outcome == 'failure'
