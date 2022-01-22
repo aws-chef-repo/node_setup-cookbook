@@ -38,6 +38,16 @@ jobs:
           sudo service docker start
           sudo systemctl enable docker
           service docker status
+      
+      - name: Docker Running?
+        continue-on-error: true
+        id: check-docker-status
+        run: service docker status
+
+      - name: Install Docker
+        if: steps.check-docker-status.outcome == 'failure'
+        run: service docker start
+
       - name: Kitchen Converge
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
