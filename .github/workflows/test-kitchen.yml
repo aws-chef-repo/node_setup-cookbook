@@ -46,7 +46,7 @@ jobs:
 
       - name: Install Docker
         if: steps.check-docker-status.outcome == 'failure'
-        run: service docker start
+        run: sudo service docker start
 
       - name: Kitchen Converge
         env:
