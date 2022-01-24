@@ -3,8 +3,6 @@ driver:
   name: dokken
   chef_version: 17
   privileged: true
-  pull_platform_image: false
-  pull_chef_image: false
 
 transport:
   name: dokken
@@ -33,23 +31,19 @@ suites:
 platforms:
   - name: amazonlinux-2
     driver:
-      image: amazonlinux-2:mine
-      pid_one_command: /usr/lib/systemd/systemd
-  - name: almalinux-8
-    driver:
-      image: almalinux-8:mine
+      image: dokken/amazonlinux-2
       pid_one_command: /usr/lib/systemd/systemd
   - name: centos-8
     driver:
-      image: centos-stream-8:mine
+      image: dokken/centos-8
       pid_one_command: /usr/lib/systemd/systemd
   - name: centos-7
     driver:
-     image: centos-7:mine
+     image: dokken/centos-7
      pid_one_command: /sbin/init
   - name: ubuntu-20.04
     driver:
-     image: ubuntu-20.04:mine
+     image: dokken/ubuntu-20.04
      pid_one_command: /bin/systemd
 
 
