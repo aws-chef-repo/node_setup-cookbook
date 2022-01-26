@@ -7,6 +7,10 @@ describe file('/etc/chef/client.rb') do
   it { should exist }
 end
 
+describe file('/etc/chef/validation.pem') do
+  it { should_not exist }
+end
+
 describe file('/etc/chef/client.rb') do
   its('content') { should match /chef_license "accept"/ }
   its('content') { should match /chef_server_url/ }

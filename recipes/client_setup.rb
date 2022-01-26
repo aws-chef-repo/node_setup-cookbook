@@ -36,4 +36,16 @@ end
 ###########
 # Set up a cron job for chef-client to run every 30 mins
 ###########
-chef_client_cron 'Run Chef Infra Client as a cron job'
+chef_client_cron 'Run Chef Infra Client as a cron job' do
+  accept_chef_license true
+  minute "#{node['chef_client_cron']['minute']}"
+  splay "#{node['chef_client_cron']['splay']}"
+end
+
+###########
+# Set Timezone
+###########
+
+timezone "Set TZ to #{node['node_setup']['timezone']}" do
+  timezone "#{node['node_setup']['timezone']}"
+end

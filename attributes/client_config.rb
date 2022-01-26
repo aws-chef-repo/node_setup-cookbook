@@ -16,3 +16,7 @@ default['node_setup']['policy_group'] = 'staging'
 # Specify chef-client version
 default['node_setup']['client_updater']['version'] = '17'
 default['node_setup']['client_updater']['channel'] = 'stable'
+
+# Specify chef-client cron interval settings
+default['chef_client_cron']['minute'] = "0,30"
+default['chef_client_cron']['splay'] = 300
