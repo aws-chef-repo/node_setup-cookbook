@@ -14,12 +14,11 @@ chef_client_config 'client.rb' do
   log_location 'STDOUT'
   policy_name "#{node['node_setup']['policy_name']}"
   policy_group "#{node['node_setup']['policy_group']}"
-  additional_config "validation_client_name \"#{node['node_setup']['org_validator_name']}\"\ntrusted_certs_dir \"/etc/chef/trusted_certs\""
 end
 
 file 'Delete org validator key' do
   only_if { ::File.exist?('/etc/chef/client.pem') }
-  path "/etc/chef/validation.pem"
+  path '/etc/chef/validation.pem'
   action :delete
 end
 
@@ -40,12 +39,4 @@ chef_client_cron 'Run Chef Infra Client as a cron job' do
   accept_chef_license true
   minute "#{node['chef_client_cron']['minute']}"
   splay "#{node['chef_client_cron']['splay']}"
-end
-
-###########
-# Set Timezone
-###########
-
-timezone "Set TZ to #{node['node_setup']['timezone']}" do
-  timezone "#{node['node_setup']['timezone']}"
 end

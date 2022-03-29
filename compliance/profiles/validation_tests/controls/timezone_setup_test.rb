@@ -3,6 +3,8 @@
 # The InSpec reference, with examples and extensive documentation, can be
 # found at https://docs.chef.io/inspec/resources/
 
+title 'タイムゾーン確認'
+
 describe bash('timedatectl status | grep Tokyo') do
   its('stdout') { should include 'Time zone: Asia/Tokyo' }
   its('stderr') { should eq '' }
