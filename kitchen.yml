@@ -28,6 +28,6 @@ suites:
       inspec_tests:
         - compliance/profiles/validation_tests
     attributes: { 
-     audit: { reporter: 'audit-enforcer' },
+     audit: { reporter: 'cli' },
       environment: "production"
      }
