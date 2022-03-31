@@ -1,1 +1,0 @@
-default['audit']['reporter'] = nil

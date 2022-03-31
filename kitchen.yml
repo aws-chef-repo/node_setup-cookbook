@@ -19,6 +19,8 @@ verifier:
 
 platforms:
   - name: rhel-8
+    driver:
+      tags: { "Name": "node_setup-TestKitchen" }
 
 suites:
   - name: default
